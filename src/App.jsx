@@ -60,14 +60,15 @@ const StudentTable = () => {
   const [minDate, setMinDate] = useState("");
   const [maxDate, setMaxDate] = useState("");
 
+  // Function to handle filtering
   const handleFilter = () => {
-    const trimmedSearchTerm = searchTerm.trim().toLowerCase(); // Trim and convert to lowercase
+    const trimmedSearchTerm = searchTerm.trim().toLowerCase();
 
     const filtered = studentsData.filter((student) => {
       const matchesSearchTerm =
         student.lastName.toLowerCase().includes(trimmedSearchTerm) ||
         student.firstName.toLowerCase().includes(trimmedSearchTerm) ||
-        student.course.toLowerCase() === trimmedSearchTerm || // Exact match for course
+        student.course.toLowerCase() === trimmedSearchTerm ||
         calculateAge(student.birthdate).toString().includes(trimmedSearchTerm);
 
       const matchesDateRange =
@@ -77,6 +78,14 @@ const StudentTable = () => {
       return matchesSearchTerm && matchesDateRange;
     });
     setFilteredData(filtered);
+  };
+
+  // Function to reset filters
+  const resetFilters = () => {
+    setSearchTerm("");
+    setMinDate("");
+    setMaxDate("");
+    setFilteredData(studentsData);
   };
 
   return (
@@ -92,7 +101,7 @@ const StudentTable = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
-                handleFilter(); // Trigger filtering on Enter key press
+                handleFilter();
               }
             }}
           />
@@ -118,6 +127,10 @@ const StudentTable = () => {
             />
           </div>
           <button onClick={handleFilter}>Filter</button>
+          {/* Add Refresh button */}
+          <button onClick={resetFilters} style={{ marginLeft: "10px" }}>
+            Refresh
+          </button>
         </div>
       </div>
 
