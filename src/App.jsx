@@ -60,7 +60,6 @@ const StudentTable = () => {
   const [minDate, setMinDate] = useState("");
   const [maxDate, setMaxDate] = useState("");
 
-  // Function to handle filtering
   const handleFilter = () => {
     const trimmedSearchTerm = searchTerm.trim().toLowerCase();
 
@@ -127,7 +126,7 @@ const StudentTable = () => {
             />
           </div>
           <button onClick={handleFilter}>Filter</button>
-          {/* Add Refresh button */}
+          {}
           <button onClick={resetFilters} style={{ marginLeft: "10px" }}>
             Refresh
           </button>
