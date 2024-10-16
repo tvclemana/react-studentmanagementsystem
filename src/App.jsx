@@ -3,40 +3,40 @@ import "./app.css";
 
 const studentsData = [
   {
-    lastName: "Hitgano",
-    firstName: "Rey",
-    course: "IT",
-    birthdate: "2000/07/28",
+    lastName: "Cerbo",
+    firstName: "Deandrei",
+    course: "DS",
+    birthdate: "2006/07/28",
   },
   {
-    lastName: "Hitgano",
-    firstName: "Vivencio",
-    course: "IT",
-    birthdate: "1990/01/01",
+    lastName: "Aman",
+    firstName: "Glenn",
+    course: "DS",
+    birthdate: "2001/01/01",
   },
   {
-    lastName: "Hitgano",
-    firstName: "Yuan",
-    course: "IT",
-    birthdate: "1991/02/02",
+    lastName: "Roman",
+    firstName: "Mark",
+    course: "IS",
+    birthdate: "1995/02/02",
   },
   {
     lastName: "Aspa",
-    firstName: "James",
+    firstName: "Kurt",
     course: "CS",
-    birthdate: "2019/05/04",
+    birthdate: "2002/05/04",
   },
   {
     lastName: "Ancheta",
-    firstName: "James",
-    course: "DS",
-    birthdate: "2003/06/17",
+    firstName: "Nolan",
+    course: "IT",
+    birthdate: "1999/06/17",
   },
   {
     lastName: "Lemana",
     firstName: "Tristan",
-    course: "IS",
-    birthdate: "1997/03/15",
+    course: "CS",
+    birthdate: "2003/04/07",
   },
 ];
 
@@ -79,7 +79,6 @@ const StudentTable = () => {
     setFilteredData(filtered);
   };
 
-  // Function to reset filters
   const resetFilters = () => {
     setSearchTerm("");
     setMinDate("");
@@ -126,7 +125,6 @@ const StudentTable = () => {
             />
           </div>
           <button onClick={handleFilter}>Filter</button>
-          {}
           <button onClick={resetFilters} style={{ marginLeft: "10px" }}>
             Refresh
           </button>
